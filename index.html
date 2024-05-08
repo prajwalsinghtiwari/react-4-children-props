@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>children props in react component</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            grid-auto-rows: minmax(100px, 300px);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        // Your ItemList component code will go here
+
+        function Gallery({ children }) {
+            return <div class="container">
+                {children}
+            </div>
+        };
+        let images = <Gallery>
+            <img src="https://i.eurosport.com/2023/11/30/3834929-77931508-2560-1440.jpg" />
+            <img src="https://i.eurosport.com/2023/11/30/3834929-77931508-2560-1440.jpg" />
+            <img src="https://i.eurosport.com/2023/11/30/3834929-77931508-2560-1440.jpg" />
+            <img src="https://i.eurosport.com/2023/11/30/3834929-77931508-2560-1440.jpg" />
+            <img src="https://i.eurosport.com/2023/11/30/3834929-77931508-2560-1440.jpg" />
+            <img src="https://i.eurosport.com/2023/11/30/3834929-77931508-2560-1440.jpg" />
+            <img src="https://i.eurosport.com/2023/11/30/3834929-77931508-2560-1440.jpg" />
+            <img src="https://i.eurosport.com/2023/11/30/3834929-77931508-2560-1440.jpg" />
+            <img src="https://i.eurosport.com/2023/11/30/3834929-77931508-2560-1440.jpg" />
+            <img src="https://i.eurosport.com/2023/11/30/3834929-77931508-2560-1440.jpg" />
+            <img src="https://i.eurosport.com/2023/11/30/3834929-77931508-2560-1440.jpg" />
+            <img src="https://i.eurosport.com/2023/11/30/3834929-77931508-2560-1440.jpg" />
+        </Gallery>
+
+
+        let rootId = document.getElementById("root")
+
+        const rootEle = ReactDOM.createRoot(rootId)
+        rootEle.render(images)
+
+
+
+    </script>
+</body>
+
+</html>
